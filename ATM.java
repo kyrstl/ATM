@@ -22,6 +22,15 @@ public class ATM {
         }
     }
 
+    public void closeAccount (String userId) {
+        if(map.containsKey(userId) && map.get(userId)==0) {
+            map.remove(userId);
+        }
+        else {
+            System.out.println("error closing account: please withdraw all money before closing account!");
+        }
+    }
+
     
     
 }
