@@ -69,5 +69,16 @@ public class ATM {
         }
         return false;
     }
+
+    public void audit() {
+        /*if() {
+
+        }*/
+        File out = new File("AccountAudit.txt");
+		PrintWriter pw = new PrintWriter(out);
+        for(int i=0; i<map.size(); i++) {
+            
+        }
+    }
     
 }
