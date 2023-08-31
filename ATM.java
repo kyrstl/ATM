@@ -13,5 +13,15 @@ public class ATM {
         
     }
 
+    public void openAccount (String userId, Double idep) {
+        if(!map.containsKey(userId)) {
+			map.put(userId, idep);
+        }
+        else {
+            System.out.println("user already exists.");
+        }
+    }
+
+    
     
 }
