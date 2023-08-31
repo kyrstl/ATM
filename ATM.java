@@ -49,6 +49,16 @@ public class ATM {
         
     }
 
+    public Double withdrawMoney(String userId, Double amount) {
+        if(map.containsKey(userId) && map.get(userId)>=amount) {
+            map.replace(userId, map.get(userId), map.get(userId)-amount);
+            return map.get(userId);
+        }
+        else {
+            throw new IllegalArgumentException("account not found, you are broke af!!");
+        }
+    }
+
     
     
 }
