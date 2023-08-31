@@ -59,6 +59,15 @@ public class ATM {
         }
     }
 
-    
+    public boolean transferMoney(String fromAccount, String toAccount, Double amount) {
+        if(map.containsKey(fromAccount) && map.containsKey(toAccount)) {
+            if(map.get(fromAccount)>=amount) {
+                withdrawMoney(fromAccount, amount);
+                depositMoney(toAccount, amount);
+                return true;
+            }
+        }
+        return false;
+    }
     
 }
