@@ -31,6 +31,13 @@ public class ATM {
         }
     }
 
+    public Double checkBalance(String userId) {
+        if(map.containsKey(userId)) {
+            return map.get(userId);
+        }
+        throw new IllegalArgumentException("account not found");
+    }
+
     
     
 }
