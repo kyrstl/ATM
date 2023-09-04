@@ -31,14 +31,14 @@ public class ATM {
         }
     }
 
-    public Double checkBalance(String userId) {
+    public double checkBalance(String userId) {
         if(map.containsKey(userId)) {
             return map.get(userId);
         }
         throw new IllegalArgumentException("account not found");
     }
 
-    public Double depositMoney(String userId, Double amount) {
+    public double depositMoney(String userId, double amount) {
         if(map.containsKey(userId)) {
             map.replace(userId, map.get(userId), map.get(userId)+amount);
             return map.get(userId);
@@ -49,7 +49,7 @@ public class ATM {
         
     }
 
-    public Double withdrawMoney(String userId, Double amount) {
+    public double withdrawMoney(String userId, double amount) {
         if(map.containsKey(userId) && map.get(userId)>=amount) {
             map.replace(userId, map.get(userId), map.get(userId)-amount);
             return map.get(userId);
@@ -59,7 +59,7 @@ public class ATM {
         }
     }
 
-    public boolean transferMoney(String fromAccount, String toAccount, Double amount) {
+    public boolean transferMoney(String fromAccount, String toAccount, double amount) {
         if(map.containsKey(fromAccount) && map.containsKey(toAccount)) {
             if(map.get(fromAccount)>=amount) {
                 withdrawMoney(fromAccount, amount);
@@ -76,7 +76,7 @@ public class ATM {
         }*/
         File out = new File("AccountAudit.txt");
 		PrintWriter pw = new PrintWriter(out);
-        for(int i=0; i<map.size(); i++) {
+        for(String key : map.keySet()) {
             
         }
     }
