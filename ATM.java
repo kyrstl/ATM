@@ -13,7 +13,7 @@ public class ATM {
         
     }
 
-    public void openAccount (String userId, Double idep) {
+    public void openAccount (String userId, double idep) {
         if(!map.containsKey(userId)) {
 			map.put(userId, idep);
         }
@@ -78,7 +78,7 @@ public class ATM {
 		PrintWriter pw = new PrintWriter(out);
         for(String key : map.keySet()) {
             double amount = map.get(key);
-            System.out.println(key + ": " + amount);
+            pw.println(key + ": " + amount);
         }
         pw.close();
     }
