@@ -1,8 +1,8 @@
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
-import org.w3c.dom.Node;
 
 public class ATM {
     //private String userID;
@@ -70,15 +70,17 @@ public class ATM {
         return false;
     }
 
-    public void audit() {
+    public void audit() throws FileNotFoundException {
         /*if() {
 
         }*/
         File out = new File("AccountAudit.txt");
 		PrintWriter pw = new PrintWriter(out);
         for(String key : map.keySet()) {
-            
+            double amount = map.get(key);
+            System.out.println(key + ": " + amount);
         }
+        pw.close();
     }
     
 }
